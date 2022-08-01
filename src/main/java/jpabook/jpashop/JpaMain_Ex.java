@@ -1,6 +1,6 @@
 package jpabook.jpashop;
 
-import com.sun.org.apache.xpath.internal.operations.Or;
+import jpabook.jpashop.domain.Book;
 import jpabook.jpashop.domain.Order;
 import jpabook.jpashop.domain.OrderItem;
 
@@ -36,6 +36,14 @@ public class JpaMain_Ex {
             orderItem.setOrder(order);
 
             em.persist(orderItem);
+            em.flush();
+            em.clear();
+
+            Book book = new Book();
+            book.setName("헨젤과 그레텔");
+            book.setAuthor("Shawn");
+
+            em.persist(book);
 
             tx.commit();
         } catch (Exception e) {

@@ -8,7 +8,7 @@ import java.util.List;
 import static javax.persistence.GenerationType.AUTO;
 
 @Entity
-public class Member {
+public class Member extends BaseEntity{
 
     @Id @GeneratedValue(strategy = AUTO)    //속성 생략해도 default가 auto
     @Column(name = "MEMBER_ID")
